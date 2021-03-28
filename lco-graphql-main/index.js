@@ -17,7 +17,7 @@ app.use('/graphql',graphqlHTTP({
     graphiql: true
 }))
 
-app.listen(8083,()=>console.log("running at 8082"))
+app.listen(8083,()=>console.log("running at 8082-test"))
 /*
 * mutation{
   createCourse(input: {
