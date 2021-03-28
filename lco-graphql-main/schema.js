@@ -26,6 +26,7 @@ const schema =buildSchema(`
     
     type Query {
         getUser(id: ID): User
+        getPost(pid: ID): Post
     }
     
     input UserInput{
@@ -38,7 +39,7 @@ const schema =buildSchema(`
     }
     
     input PostInput{
-       pid: ID
+        pid: ID
         title: String
         slug: String
         views: Int
@@ -49,6 +50,7 @@ const schema =buildSchema(`
     
     type Mutation {
          createUser(input: UserInput): User
+         createPost(input: PostInput): Post
     }
 `)
 export  default schema;

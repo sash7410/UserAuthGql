@@ -75,5 +75,14 @@ app.listen(8083,()=>console.log("running at 8082"))
     userName
   }
 }
+*46aK2w9jah5OGJuA_GHOt pid
+* NRmpwXdvOtaJgjAxseuHf uid
 *
+*
+* query{
+  getUser(id: "fMEqIxPi3SYQRfkqS8VbX"){
+    id
+  	userName
+  }
+}
 * */
