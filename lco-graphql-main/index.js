@@ -17,41 +17,8 @@ app.use('/graphql',graphqlHTTP({
     graphiql: true
 }))
 
-app.listen(8083,()=>console.log("running at 8083-mainn"))
+app.listen(8083,()=>console.log("running at 8083-test"))
 /*
-* mutation{
-  createCourse(input: {
-    courseName: "JS Bootcamp"
-  	price: 199
-    stack: MOBILE
-    teachingAssists: [
-      {
-        firstName: "hitesh"
-        lastName: "lol"
-        experience: 1
-      },
-      {
-        firstName: "lollol"
-        lastName: "lol656"
-        experience: 2
-      }
-
-    ]
-  }){
-    id,
-    courseName
-  }
-}
-*
-* query{
-  getCourse(id: "fMEqIxPi3SYQRfkqS8VbX"){
-    id
-    teachingAssists{
-      experience
-    }
-  }
-}
-*
 *
 * mutation{
   createUser(input: {
@@ -76,7 +43,7 @@ app.listen(8083,()=>console.log("running at 8083-mainn"))
   }
 }
 *46aK2w9jah5OGJuA_GHOt pid
-* NRmpwXdvOtaJgjAxseuHf uid
+*NRmpwXdvOtaJgjAxseuHf uid
 *
 *
 * query{

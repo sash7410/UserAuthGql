@@ -26,6 +26,7 @@ const schema =buildSchema(`
     
     type Query {
         getUser(id: ID): User
+        getAllUsers: [User]
         getPost(pid: ID): Post
     }
     
@@ -45,12 +46,21 @@ const schema =buildSchema(`
         views: Int
         body: String
         published: Boolean
-        user: UserInput
+        userId: ID!
     }
-    
+      input UserInputp{
+        id: ID
+        userName: String
+        email: String!
+        role: Role
+        password: String
+        postId: ID
+    }
     type Mutation {
-         createUser(input: UserInput): User
+         createUserAndPost(input: UserInput): User
+         
          createPost(input: PostInput): Post
     }
 `)
 export  default schema;
+//createUserWithPid(input: UserInputp): User
