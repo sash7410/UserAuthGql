@@ -1,31 +1,29 @@
 import {nanoid} from 'nanoid'
 
-class Course{
+class User{
     constructor(id,{
-        courseName, category, price, language, email, stack, teachingAssists
+        userName, email, role, password, posts
     }) {
         this.id=id
-        this.category=category
-        this.courseName=courseName
-        this.price=price
-        this.language=language
+        this.userName=userName
         this.email=email
-        this.stack=stack
-        this.teachingAssists=teachingAssists
+        this.role=role
+        this.password=password
+        this.posts=posts
     }
 
 }
 
-const courseholder = {}
+const userholder = {}
 
 const resolvers = {
-    getCourse : ({ id }) => {
-return new Course(id, courseholder[id])
+    getUser : ({ id }) => {
+return new User(id, userholder[id])
     },
-    createCourse: ({ input }) =>{
+    createUser: ({ input }) =>{
         let id=nanoid()
-        courseholder[id]= input
-        return new Course(id, input)
+        userholder[id]= input
+        return new User(id, input)
     }
 }
 export default  resolvers;

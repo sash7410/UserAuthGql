@@ -1,51 +1,54 @@
 import {buildSchema} from "graphql";
 
 const schema =buildSchema(`
-    type Course {
+    type User {
         id: ID
-        courseName: String
-        category: String
-        price: Int
-        language: String
+        userName: String
         email: String
-        stack: Stack
-        teachingAssists: [TeachingAssist]
+        role: Role
+        password: String
+        posts: [Post]
     }
-    type TeachingAssist {
-        firstName: String
-        lastName: String
-        experience: Int
+    type Post {
+        pid: ID
+        title: String
+        slug: String
+        views: Int
+        body: String
+        published: Boolean
+        user: User
     }
-    
-    enum Stack {
-        WEB
-        MOBILE
-        OTHER
+  
+    enum Role {
+        ADMIN
+        AUTHOR
     }
     
     type Query {
-        getCourse(id: ID): Course
+        getUser(id: ID): User
     }
     
-    input CourseInput{
-         id: ID
-        courseName: String!
-        category: String
-        price: Int!
-        language: String
-        email: String
-        stack: Stack
-        teachingAssists: [TeachingAssistInput]
+    input UserInput{
+        id: ID
+        userName: String
+        email: String!
+        role: Role
+        password: String
+        posts: [PostInput!]
     }
     
-    input TeachingAssistInput{
-        firstName: String
-        lastName: String
-        experience: Int
+    input PostInput{
+       pid: ID
+        title: String
+        slug: String
+        views: Int
+        body: String
+        published: Boolean
+        user: UserInput
     }
     
     type Mutation {
-         createCourse(input: CourseInput): Course
+         createUser(input: UserInput): User
     }
 `)
 export  default schema;

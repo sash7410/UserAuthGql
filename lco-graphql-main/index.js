@@ -17,7 +17,7 @@ app.use('/graphql',graphqlHTTP({
     graphiql: true
 }))
 
-app.listen(8082,()=>console.log("running at 8082"))
+app.listen(8083,()=>console.log("running at 8082"))
 /*
 * mutation{
   createCourse(input: {
@@ -51,4 +51,29 @@ app.listen(8082,()=>console.log("running at 8082"))
     }
   }
 }
+*
+*
+* mutation{
+  createUser(input: {
+    userName: "sashankRm"
+  	email: "sashankrm11@gmail.com"
+    role: ADMIN
+    password: "12345"
+    posts: [
+      {
+        pid: 1
+        title: "lol"
+        slug: "jhgffj"
+        views: 2
+        body: "lojkhl"
+        published: true
+      }
+
+    ]
+  }){
+    id,
+    userName
+  }
+}
+*
 * */
